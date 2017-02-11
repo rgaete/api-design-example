@@ -16,4 +16,6 @@ public class Tag {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    private String content;
+
 }
