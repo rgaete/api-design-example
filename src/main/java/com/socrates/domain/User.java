@@ -1,5 +1,6 @@
 package com.socrates.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -13,9 +14,14 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String username;
+    private String firstName;
+
+    private String lastName;
+
+    private String login;
 
     @OneToMany(mappedBy = "user")
+    @JsonProperty("posts")
     private List<Post> posts;
 
 }
